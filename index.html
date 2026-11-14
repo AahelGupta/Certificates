@@ -339,6 +339,19 @@
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
+    
+    .btn-linkedin {
+      background: #0a66c2;
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 12px rgba(10, 102, 194, 0.3);
+    }
+    .btn-linkedin:hover {
+      background: #004182;
+      box-shadow: 0 6px 18px rgba(10, 102, 194, 0.5);
+      transform: translateY(-2px);
+    }
+
     .btn-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
       border-color: rgba(255, 255, 255, 0.2);
@@ -486,169 +499,187 @@
 
   <script>
     const certificates = [
-      {
-        id: "internship",
-        title: "Internship Certificate",
-        category: "professional",
-        categoryLabel: "Professional",
-        desc: "Certified industry experience and successful completion of professional internship responsibilities.",
-        anim: "./assets/animations/internship.svg",
-        file: "./Internship Certificate.pdf"
-      },
-      {
-        id: "training",
-        title: "Training Certificate",
-        category: "professional",
-        categoryLabel: "Professional",
-        desc: "Formal comprehensive technical training program completion and domain competency certification.",
-        anim: "./assets/animations/training.svg",
-        file: "./Training Certificate.pdf"
-      },
-      {
-        id: "html",
-        title: "HTML Certificate",
-        category: "frontend",
-        categoryLabel: "Frontend",
-        desc: "Semantic HTML5 architecture, DOM hierarchy, accessible web structures, and SEO compliance.",
-        anim: "./assets/animations/html.svg",
-        file: "./Certificate HTML.pdf"
-      },
-      {
-        id: "css",
-        title: "CSS Certificate",
-        category: "frontend",
-        categoryLabel: "Frontend",
-        desc: "Responsive web layouts, Flexbox, CSS Grid, media queries, keyframe animations, and styling.",
-        anim: "./assets/animations/css.svg",
-        file: "./Certificate CSS.pdf"
-      },
-      {
-        id: "javascript",
-        title: "JavaScript Certificate",
-        category: "frontend",
-        categoryLabel: "Frontend",
-        desc: "ES6+ core language, asynchronous programming, promises, DOM manipulation, and browser APIs.",
-        anim: "./assets/animations/javascript.svg",
-        file: "./Certificate JavaScript.pdf"
-      },
-      {
-        id: "react",
-        title: "React Certificate",
-        category: "frontend",
-        categoryLabel: "Frontend",
-        desc: "Component architecture, React Hooks, virtual DOM reconciliation, state management, and SPA workflows.",
-        anim: "./assets/animations/react.svg",
-        file: "./Certificate React.pdf"
-      },
-      {
-        id: "angular",
-        title: "Angular Certificate",
-        category: "frontend",
-        categoryLabel: "Frontend",
-        desc: "TypeScript framework, dependency injection, RxJS reactive patterns, modular routing, and components.",
-        anim: "./assets/animations/angular.svg",
-        file: "./Certificate Angular.pdf"
-      },
-      {
-        id: "wordpress",
-        title: "WordPress Certificate",
-        category: "frontend",
-        categoryLabel: "Frontend",
-        desc: "CMS architecture, theme customization, plugin integration, content schemas, and publishing.",
-        anim: "./assets/animations/wordpress.svg",
-        file: "./Certificate WordPress.pdf"
-      },
-      {
-        id: "python",
-        title: "Python Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: "Core syntax, OOP concepts, data structures, algorithms, modular scripting, and standard libraries.",
-        anim: "./assets/animations/python.svg",
-        file: "./Certificate Python.pdf"
-      },
-      {
-        id: "django",
-        title: "Django Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: "Python web framework, MVT architecture, ORM querysets, authentication, and RESTful APIs.",
-        anim: "./assets/animations/django.svg",
-        file: "./Certificate Django.pdf"
-      },
-      {
-        id: "node",
-        title: "Node.js Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: "V8 JavaScript runtime, event-driven I/O, Express routing, middleware pipelines, and API services.",
-        anim: "./assets/animations/node.svg",
-        file: "./Certificate Node.pdf"
-      },
-      {
-        id: "csharp",
-        title: "C# Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: "Object-oriented paradigms, LINQ expressions, generics, asynchronous tasks, and memory management.",
-        anim: "./assets/animations/csharp.svg",
-        file: "./Certificate C#.pdf"
-      },
-      {
-        id: ".net",
-        title: ".NET Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: ".NET runtime environment, Web APIs, dependency injection, CLI tooling, and cross-platform architecture.",
-        anim: "./assets/animations/dotnet.svg",
-        file: "./Certificate .NET.pdf"
-      },
-      {
-        id: "php",
-        title: "PHP Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: "Server-side scripting, sessions, database connectivity, request lifecycles, and backend integrations.",
-        anim: "./assets/animations/php.svg",
-        file: "./Certificate PHP.pdf"
-      },
-      {
-        id: "ruby",
-        title: "Ruby Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: "Pure object-oriented programming, blocks, procs, lambdas, metaprogramming, and Ruby gems.",
-        anim: "./assets/animations/ruby.svg",
-        file: "./Certificate Ruby.pdf"
-      },
-      {
-        id: "rails",
-        title: "Ruby On Rails Certificate",
-        category: "backend",
-        categoryLabel: "Backend",
-        desc: "Convention over configuration, ActiveRecord ORM, migrations, MVC routing, and rapid app prototyping.",
-        anim: "./assets/animations/rails.svg",
-        file: "./Certificate Ruby On Rails.pdf"
-      },
-      {
-        id: "sql",
-        title: "SQL Certificate",
-        category: "tools",
-        categoryLabel: "Database",
-        desc: "Relational database querying, multi-table JOINs, aggregations, indexing strategies, and schema design.",
-        anim: "./assets/animations/sql.svg",
-        file: "./Certificate SQL.pdf"
-      },
-      {
-        id: "git",
-        title: "Git Certificate",
-        category: "tools",
-        categoryLabel: "Tools",
-        desc: "Distributed version control, branching strategies, merge conflict resolution, rebasing, and GitHub collaboration.",
-        anim: "./assets/animations/git.svg",
-        file: "./Certificate Git.pdf"
-      }
-    ];
+    {
+        "id": "Internship Certificate",
+        "title": "Internship Certificate",
+        "category": "professional",
+        "categoryLabel": "Professional",
+        "desc": "Certified industry experience and successful completion of professional internship responsibilities.",
+        "anim": "./assets/animations/internship.svg",
+        "file": "./Internship Certificate.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Website+Design+and+Development+Internship&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FInternship%2520Certificate.pdf&certId=ISWDI3625084"
+    },
+    {
+        "id": "Training Certificate",
+        "title": "Training Certificate",
+        "category": "professional",
+        "categoryLabel": "Professional",
+        "desc": "Formal comprehensive technical training program completion and domain competency certification.",
+        "anim": "./assets/animations/training.svg",
+        "file": "./Training Certificate.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Website+Design+and+Development+Training&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FTraining%2520Certificate.pdf&certId=ISWDT3625084"
+    },
+    {
+        "id": "Certificate HTML",
+        "title": "Certificate HTML",
+        "category": "frontend",
+        "categoryLabel": "Frontend",
+        "desc": "Semantic HTML5 architecture, DOM hierarchy, accessible web structures, and SEO compliance.",
+        "anim": "./assets/animations/html.svg",
+        "file": "./Certificate HTML.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=HTML+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520HTML.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate CSS",
+        "title": "Certificate CSS",
+        "category": "frontend",
+        "categoryLabel": "Frontend",
+        "desc": "Responsive web layouts, Flexbox, CSS Grid, media queries, keyframe animations, and styling.",
+        "anim": "./assets/animations/css.svg",
+        "file": "./Certificate CSS.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=CSS+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520CSS.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate JavaScript",
+        "title": "Certificate JavaScript",
+        "category": "frontend",
+        "categoryLabel": "Frontend",
+        "desc": "ES6+ core language, asynchronous programming, promises, DOM manipulation, and browser APIs.",
+        "anim": "./assets/animations/javascript.svg",
+        "file": "./Certificate JavaScript.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=JavaScript+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520JavaScript.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate React",
+        "title": "Certificate React",
+        "category": "frontend",
+        "categoryLabel": "Frontend",
+        "desc": "Component architecture, React Hooks, virtual DOM reconciliation, state management, and SPA workflows.",
+        "anim": "./assets/animations/react.svg",
+        "file": "./Certificate React.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=React+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520React.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate Angular",
+        "title": "Certificate Angular",
+        "category": "frontend",
+        "categoryLabel": "Frontend",
+        "desc": "TypeScript framework, dependency injection, RxJS reactive patterns, modular routing, and components.",
+        "anim": "./assets/animations/angular.svg",
+        "file": "./Certificate Angular.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Angular+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520Angular.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate WordPress",
+        "title": "Certificate WordPress",
+        "category": "frontend",
+        "categoryLabel": "Frontend",
+        "desc": "CMS architecture, theme customization, plugin integration, content schemas, and publishing.",
+        "anim": "./assets/animations/wordpress.svg",
+        "file": "./Certificate WordPress.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=WordPress+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520WordPress.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate Python",
+        "title": "Certificate Python",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": "Core syntax, OOP concepts, data structures, algorithms, modular scripting, and standard libraries.",
+        "anim": "./assets/animations/python.svg",
+        "file": "./Certificate Python.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Python+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520Python.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate Django",
+        "title": "Certificate Django",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": "Python web framework, MVT architecture, ORM querysets, authentication, and RESTful APIs.",
+        "anim": "./assets/animations/django.svg",
+        "file": "./Certificate Django.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Django+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520Django.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate Node",
+        "title": "Certificate Node",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": "V8 JavaScript runtime, event-driven I/O, Express routing, middleware pipelines, and API services.",
+        "anim": "./assets/animations/node.svg",
+        "file": "./Certificate Node.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Node.js+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520Node.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate C#",
+        "title": "Certificate C#",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": "Object-oriented paradigms, LINQ expressions, generics, asynchronous tasks, and memory management.",
+        "anim": "./assets/animations/csharp.svg",
+        "file": "./Certificate C#.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=C%23+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520C%2523.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate .NET",
+        "title": "Certificate .NET",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": ".NET runtime environment, Web APIs, dependency injection, CLI tooling, and cross-platform architecture.",
+        "anim": "./assets/animations/dotnet.svg",
+        "file": "./Certificate .NET.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=.NET+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520.NET.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate PHP",
+        "title": "Certificate PHP",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": "Server-side scripting, sessions, database connectivity, request lifecycles, and backend integrations.",
+        "anim": "./assets/animations/php.svg",
+        "file": "./Certificate PHP.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=PHP+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520PHP.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate Ruby",
+        "title": "Certificate Ruby",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": "Pure object-oriented programming, blocks, procs, lambdas, metaprogramming, and Ruby gems.",
+        "anim": "./assets/animations/ruby.svg",
+        "file": "./Certificate Ruby.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Ruby+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520Ruby.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate Ruby On Rails",
+        "title": "Certificate Ruby On Rails",
+        "category": "backend",
+        "categoryLabel": "Backend",
+        "desc": "Convention over configuration, ActiveRecord ORM, migrations, MVC routing, and rapid app prototyping.",
+        "anim": "./assets/animations/rails.svg",
+        "file": "./Certificate Ruby On Rails.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Ruby+on+Rails+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520Ruby%2520On%2520Rails.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate SQL",
+        "title": "Certificate SQL",
+        "category": "tools",
+        "categoryLabel": "Database",
+        "desc": "Relational database querying, multi-table JOINs, aggregations, indexing strategies, and schema design.",
+        "anim": "./assets/animations/sql.svg",
+        "file": "./Certificate SQL.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=SQL+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520SQL.pdf&certId=3625084"
+    },
+    {
+        "id": "Certificate Git",
+        "title": "Certificate Git",
+        "category": "tools",
+        "categoryLabel": "Tools",
+        "desc": "Distributed version control, branching strategies, merge conflict resolution, rebasing, and GitHub collaboration.",
+        "anim": "./assets/animations/git.svg",
+        "file": "./Certificate Git.pdf",
+        "linkedinUrl": "https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=Git+-+Skills+Assessment+%28Level+1%29&organizationName=Internship+Studio&issueYear=2026&issueMonth=11&certUrl=https%3A%2F%2Fgithub.com%2FAahelGupta%2FCertificates%2Fblob%2Fmain%2FCertificate%2520Git.pdf&certId=3625084"
+    }
+];
 
     const certGrid = document.getElementById('certGrid');
     const searchInput = document.getElementById('searchInput');
@@ -686,19 +717,25 @@
           <span class="category-tag">${c.categoryLabel}</span>
           <h3 class="cert-title">${c.title}</h3>
           <p class="cert-desc">${c.desc}</p>
-          <div class="card-actions">
-            <button class="btn btn-primary" onclick="openPreview('${encodeURIComponent(c.file)}', '${c.title}')">
+          <div class="card-actions" style="flex-wrap: wrap;">
+            <button class="btn btn-primary" style="flex: 1 1 45%;" onclick="openPreview('${encodeURIComponent(c.file)}', '${c.title}')">
               <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
               </svg>
               Preview
             </button>
-            <a class="btn btn-secondary" href="${c.file}" download>
+            <a class="btn btn-secondary" style="flex: 1 1 45%;" href="${c.file}" download>
               <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               PDF
+            </a>
+            <a class="btn btn-linkedin" style="flex: 1 1 100%; margin-top: 4px;" href="${c.linkedinUrl}" target="_blank" rel="noopener">
+              <svg width="14" height="14" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              Add to LinkedIn Profile
             </a>
           </div>
         `;
