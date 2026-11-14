@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <style>
+      .dn-circle { animation: dnPulse 2.8s ease-in-out infinite; transform-origin: 32px 32px; }
+      .orbit-particle { animation: orbitRing 5s linear infinite; transform-origin: 32px 32px; }
+      @keyframes dnPulse {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 3px #512BD4); }
+        50% { transform: scale(1.05); filter: drop-shadow(0 0 10px #7C4DFF); }
+      }
+      @keyframes orbitRing {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </defs>
+  <circle class="orbit-particle" cx="32" cy="7" r="2.5" fill="#B388FF"/>
+  <g class="dn-circle">
+    <circle cx="32" cy="32" r="22" fill="#512BD4" stroke="#7C4DFF" stroke-width="2"/>
+    <text x="32" y="38" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" text-anchor="middle">.NET</text>
+  </g>
+</svg>

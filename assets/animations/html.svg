@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <style>
+      .html-shield { animation: pulseShield 2.5s ease-in-out infinite; transform-origin: 32px 32px; }
+      .flame-shimmer { animation: flameSweep 2s ease-in-out infinite alternate; }
+      .tag-left { animation: tagMoveLeft 2s ease-in-out infinite alternate; }
+      .tag-right { animation: tagMoveRight 2s ease-in-out infinite alternate; }
+      @keyframes pulseShield {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #E44D26); }
+        50% { transform: scale(1.05); filter: drop-shadow(0 0 8px #FF6D00); }
+      }
+      @keyframes flameSweep {
+        0% { fill: #E44D26; }
+        100% { fill: #FF7043; }
+      }
+      @keyframes tagMoveLeft {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-3px); }
+      }
+      @keyframes tagMoveRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(3px); }
+      }
+    </style>
+  </defs>
+  <g class="html-shield">
+    <path d="M14 10 L18 52 L32 56 L46 52 L50 10 Z" fill="#E44D26"/>
+    <path class="flame-shimmer" d="M32 13 L47 13 L43 49 L32 52 Z"/>
+    <!-- 5 Symbol -->
+    <path d="M22 20 L42 20 L41 26 L29 26 L30 32 L40.5 32 L39.5 44 L32 46.5 L24.5 44 L25 38 L30 38 L30.5 41 L32 41.5 L34.5 41 L35.5 36 L24 36 Z" fill="#FFFFFF"/>
+  </g>
+  <!-- Animated Code Brackets < > -->
+  <path class="tag-left" d="M8 28 L4 32 L8 36" fill="none" stroke="#FF8A65" stroke-width="2" stroke-linecap="round"/>
+  <path class="tag-right" d="M56 28 L60 32 L56 36" fill="none" stroke="#FF8A65" stroke-width="2" stroke-linecap="round"/>
+</svg>

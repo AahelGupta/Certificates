@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <style>
+      .cap-group { animation: bounceCap 3s ease-in-out infinite; transform-origin: 32px 30px; }
+      .tassel { animation: swingTassel 2s ease-in-out infinite alternate; transform-origin: 32px 28px; }
+      .diploma-float { animation: floatDiploma 2.5s ease-in-out infinite alternate; }
+      .sparkle-dot { animation: pulseDot 1.5s ease-in-out infinite alternate; }
+      @keyframes bounceCap {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-3px) rotate(-1deg); }
+      }
+      @keyframes swingTassel {
+        0% { transform: rotate(-5deg); }
+        100% { transform: rotate(15deg); }
+      }
+      @keyframes floatDiploma {
+        0% { transform: translateY(0); }
+        100% { transform: translateY(3px); }
+      }
+      @keyframes pulseDot {
+        0% { opacity: 0.2; transform: scale(0.6); }
+        100% { opacity: 1; transform: scale(1.2); }
+      }
+    </style>
+  </defs>
+  <g class="cap-group">
+    <!-- Cap top diamond -->
+    <polygon points="32,16 54,26 32,36 10,26" fill="url(#capGrad)" stroke="#60A5FA" stroke-width="1.5"/>
+    <!-- Skull cap underside -->
+    <path d="M20 28 C20 40 44 40 44 28" fill="#1E40AF" stroke="#3B82F6" stroke-width="1"/>
+    <!-- Center button -->
+    <circle cx="32" cy="26" r="2.5" fill="#FBBF24"/>
+    <!-- Tassel -->
+    <g class="tassel">
+      <path d="M32 26 Q44 28 47 38" fill="none" stroke="#FBBF24" stroke-width="1.8"/>
+      <rect x="45" y="38" width="4" height="6" rx="1" fill="#F59E0B"/>
+    </g>
+    <!-- Diploma -->
+    <g class="diploma-float">
+      <rect x="20" y="44" width="24" height="7" rx="3.5" fill="#FEF3C7" stroke="#F59E0B" stroke-width="1"/>
+      <rect x="30" y="44" width="4" height="7" fill="#EF4444"/>
+    </g>
+  </g>
+  <!-- Sparkles -->
+  <circle class="sparkle-dot" cx="12" cy="18" r="1.5" fill="#93C5FD"/>
+  <circle class="sparkle-dot" cx="52" cy="16" r="2" fill="#FDE047" style="animation-delay: 0.7s;"/>
+</svg>

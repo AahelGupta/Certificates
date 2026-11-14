@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 120" width="100%" height="120">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38BDF8"/>
+      <stop offset="35%" stop-color="#818CF8"/>
+      <stop offset="70%" stop-color="#C084FC"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <style>
+      .shimmer-border { animation: borderShift 4s ease-in-out infinite alternate; }
+      .title-text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 800; font-size: 32px; letter-spacing: 1px; }
+      .sub-text { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; font-weight: 500; font-size: 15px; fill: #94A3B8; letter-spacing: 0.5px; }
+      .particle { animation: floatOrb 3s ease-in-out infinite alternate; }
+      @keyframes borderShift {
+        0% { stroke: #38BDF8; filter: drop-shadow(0 0 4px #38BDF8); }
+        50% { stroke: #A855F7; filter: drop-shadow(0 0 8px #A855F7); }
+        100% { stroke: #EC4899; filter: drop-shadow(0 0 4px #EC4899); }
+      }
+      @keyframes floatOrb {
+        0% { transform: translateY(0); opacity: 0.4; }
+        100% { transform: translateY(-6px); opacity: 0.9; }
+      }
+    </style>
+  </defs>
+  <rect x="2" y="2" width="796" height="116" rx="16" fill="url(#bgGrad)"/>
+  <rect class="shimmer-border" x="2" y="2" width="796" height="116" rx="16" fill="none" stroke-width="2"/>
+  <!-- Floating Ambient Orbs -->
+  <circle class="particle" cx="70" cy="35" r="3" fill="#38BDF8"/>
+  <circle class="particle" cx="120" cy="85" r="2.5" fill="#C084FC" style="animation-delay: 1s;"/>
+  <circle class="particle" cx="720" cy="40" r="3" fill="#F472B6" style="animation-delay: 0.5s;"/>
+  <circle class="particle" cx="670" cy="80" r="2" fill="#818CF8" style="animation-delay: 1.5s;"/>
+  <!-- Header Text -->
+  <text class="title-text" x="400" y="55" text-anchor="middle" fill="url(#textGrad)">✨ Aahel Gupta • Professional Credentials</text>
+  <text class="sub-text" x="400" y="88" text-anchor="middle">🎓 Verified Industry Certifications &amp; Technical Competencies</text>
+</svg>

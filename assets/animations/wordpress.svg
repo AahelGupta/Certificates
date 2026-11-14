@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <style>
+      .wp-body { animation: wpFloat 3s ease-in-out infinite; transform-origin: 32px 32px; }
+      .orbit-ring { animation: orbitSpin 8s linear infinite; transform-origin: 32px 32px; }
+      .w-stroke { animation: wBreathe 2s ease-in-out infinite alternate; }
+      @keyframes wpFloat {
+        0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 3px #21759B); }
+        50% { transform: translateY(-3px); filter: drop-shadow(0 0 9px #00AADC); }
+      }
+      @keyframes orbitSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes wBreathe {
+        0% { opacity: 0.85; }
+        100% { opacity: 1; filter: drop-shadow(0 0 3px #FFF); }
+      }
+    </style>
+  </defs>
+  <g class="orbit-ring">
+    <circle cx="32" cy="6" r="2.5" fill="#00AADC"/>
+    <circle cx="32" cy="58" r="1.5" fill="#78DFFA"/>
+  </g>
+  <g class="wp-body">
+    <circle cx="32" cy="32" r="22" fill="#21759B" stroke="#00AADC" stroke-width="2"/>
+    <circle cx="32" cy="32" r="19" fill="none" stroke="#FFFFFF" stroke-width="1.5"/>
+    <path class="w-stroke" d="M19 23 C21 23 23 24 23 26 L27 37 L30 27 L33 37 L37 25 C37 24 38 23 40 23 L36 43 L32 34 L28 43 Z" fill="#FFFFFF"/>
+  </g>
+</svg>

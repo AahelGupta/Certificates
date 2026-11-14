@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <style>
+      .php-pill { animation: phpFloat 3s ease-in-out infinite; transform-origin: 32px 32px; }
+      .wave-bubble { animation: waveRise 2s ease-in-out infinite alternate; }
+      @keyframes phpFloat {
+        0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 2px #777BB4); }
+        50% { transform: translateY(-3px); filter: drop-shadow(0 0 8px #8892BF); }
+      }
+      @keyframes waveRise {
+        0% { transform: translateY(2px) scale(0.9); }
+        100% { transform: translateY(-2px) scale(1.1); }
+      }
+    </style>
+  </defs>
+  <g class="php-pill">
+    <ellipse cx="32" cy="32" rx="26" ry="17" fill="#777BB4" stroke="#8892BF" stroke-width="2"/>
+    <ellipse cx="32" cy="32" rx="23" ry="14" fill="#4F5B93"/>
+    <text class="wave-bubble" x="32" y="38" font-family="'Trebuchet MS', Arial, sans-serif" font-size="15" font-weight="900" font-style="italic" fill="#FFFFFF" text-anchor="middle">php</text>
+  </g>
+</svg>

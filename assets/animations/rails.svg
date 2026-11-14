@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <style>
+      .rails-body { animation: trainRumble 2.2s ease-in-out infinite; transform-origin: 32px 32px; }
+      .speed-dash1 { animation: dashPass 1.2s linear infinite; }
+      .speed-dash2 { animation: dashPass 1.2s linear infinite 0.4s; }
+      @keyframes trainRumble {
+        0%, 100% { transform: translateY(0); filter: drop-shadow(0 0 3px #CC0000); }
+        50% { transform: translateY(-2px); filter: drop-shadow(0 0 8px #FF3333); }
+      }
+      @keyframes dashPass {
+        0% { transform: translateX(10px); opacity: 0; }
+        50% { opacity: 0.8; }
+        100% { transform: translateX(-15px); opacity: 0; }
+      }
+    </style>
+  </defs>
+  <line class="speed-dash1" x1="56" y1="20" x2="48" y2="20" stroke="#FF8A80" stroke-width="2" stroke-linecap="round"/>
+  <line class="speed-dash2" x1="58" y1="42" x2="50" y2="42" stroke="#FF8A80" stroke-width="2" stroke-linecap="round"/>
+  <g class="rails-body">
+    <rect x="12" y="14" width="38" height="36" rx="6" fill="#CC0000" stroke="#FF4D4D" stroke-width="2"/>
+    <text x="31" y="29" font-family="'Arial Black', sans-serif" font-size="10" font-weight="bold" fill="#FFFFFF" text-anchor="middle">RUBY</text>
+    <text x="31" y="42" font-family="'Arial Black', sans-serif" font-size="9" font-weight="bold" fill="#FFFFFF" text-anchor="middle">ON RAILS</text>
+  </g>
+</svg>

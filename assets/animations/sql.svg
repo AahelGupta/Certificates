@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <style>
+      .db-group { animation: dbPulse 2.8s ease-in-out infinite; transform-origin: 32px 32px; }
+      .packet-flow { animation: dataPacket 2s ease-in-out infinite; }
+      @keyframes dbPulse {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px #0284C7); }
+        50% { transform: scale(1.04); filter: drop-shadow(0 0 8px #38BDF8); }
+      }
+      @keyframes dataPacket {
+        0% { transform: translateY(0); opacity: 0.2; }
+        50% { opacity: 1; filter: drop-shadow(0 0 3px #38BDF8); }
+        100% { transform: translateY(18px); opacity: 0.2; }
+      }
+    </style>
+  </defs>
+  <g class="db-group">
+    <!-- Top cylinder -->
+    <ellipse cx="32" cy="18" rx="20" ry="7" fill="#0284C7" stroke="#38BDF8" stroke-width="1.5"/>
+    <!-- Middle tier -->
+    <path d="M12 18 L12 30 C12 34 21 37 32 37 C43 37 52 34 52 30 L52 18" fill="#0369A1" stroke="#38BDF8" stroke-width="1.5"/>
+    <ellipse cx="32" cy="30" rx="20" ry="7" fill="#0284C7" stroke="#38BDF8" stroke-width="1"/>
+    <!-- Bottom tier -->
+    <path d="M12 30 L12 42 C12 46 21 49 32 49 C43 49 52 46 52 42 L52 30" fill="#075985" stroke="#38BDF8" stroke-width="1.5"/>
+    <ellipse cx="32" cy="42" rx="20" ry="7" fill="#0284C7" stroke="#38BDF8" stroke-width="1"/>
+  </g>
+  <!-- Data Transfer Particle -->
+  <circle class="packet-flow" cx="32" cy="22" r="2.5" fill="#F0F9FF"/>
+</svg>

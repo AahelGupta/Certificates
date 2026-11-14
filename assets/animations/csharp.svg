@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="48" height="48">
+  <defs>
+    <style>
+      .cs-hex { animation: csGlow 3s ease-in-out infinite; transform-origin: 32px 32px; }
+      .sharp-pulse { animation: sharpScale 1.8s ease-in-out infinite alternate; transform-origin: 42px 32px; }
+      @keyframes csGlow {
+        0%, 100% { transform: scale(1); filter: drop-shadow(0 0 3px #9B4F96); }
+        50% { transform: scale(1.05); filter: drop-shadow(0 0 9px #C778C2); }
+      }
+      @keyframes sharpScale {
+        0% { transform: scale(0.9); fill: #E8B4E4; }
+        100% { transform: scale(1.15); fill: #FFFFFF; filter: drop-shadow(0 0 3px #FFF); }
+      }
+    </style>
+  </defs>
+  <g class="cs-hex">
+    <polygon points="32,8 54,20 54,44 32,56 10,44 10,20" fill="#239120" opacity="0.1"/>
+    <polygon points="32,10 52,21 52,43 32,54 12,43 12,21" fill="#68217A" stroke="#9B4F96" stroke-width="2"/>
+    <!-- Letter C -->
+    <path d="M30 22 C24 22 20 26 20 32 C20 38 24 42 30 42 C33 42 35 41 37 39 L34 36 C33 37 31 38 30 38 C27 38 24 35 24 32 C24 29 27 26 30 26 C31 26 33 27 34 28 L37 25 C35 23 33 22 30 22 Z" fill="#FFFFFF"/>
+    <!-- Sharp Symbol # -->
+    <g class="sharp-pulse">
+      <path d="M40 25 L39 40 M44 25 L43 40 M37 29 L46 29 M36 36 L45 36" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+</svg>
