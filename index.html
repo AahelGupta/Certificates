@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aahel Gupta - Certified Credentials & Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: rgba(22, 28, 45, 0.7);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --card-hover-border: rgba(99, 102, 241, 0.4);
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary: #6366f1;
+      --primary-glow: rgba(99, 102, 241, 0.35);
+      --accent-cyan: #06b6d4;
+      --accent-pink: #ec4899;
+      --gradient-brand: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient animated lighting */
+    .ambient-glow {
+      position: fixed;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      filter: blur(140px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.25;
+      animation: floatAura 18s infinite alternate ease-in-out;
+    }
+    .glow-1 { top: -150px; left: -100px; background: #6366f1; }
+    .glow-2 { bottom: -150px; right: -100px; background: #ec4899; animation-delay: -9s; }
+    .glow-3 { top: 40%; left: 50%; background: #06b6d4; opacity: 0.15; animation-delay: -5s; }
+
+    @keyframes floatAura {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(100px, 80px) scale(1.15); }
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Hero section */
+    .hero {
+      text-align: center;
+      margin-bottom: 50px;
+      animation: fadeInDown 0.8s ease-out;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: rgba(99, 102, 241, 0.12);
+      border: 1px solid rgba(99, 102, 241, 0.3);
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #818cf8;
+      margin-bottom: 18px;
+    }
+
+    .badge-pill::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #10b981;
+      box-shadow: 0 0 10px #10b981;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 54px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+      margin-bottom: 16px;
+      background: linear-gradient(135deg, #ffffff 30%, #cbd5e1 60%, #94a3b8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h1 span {
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero p {
+      font-size: clamp(16px, 2vw, 18px);
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 32px;
+      line-height: 1.6;
+    }
+
+    /* Search & Filter Controls */
+    .controls {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 40px;
+    }
+
+    .search-box {
+      width: 100%;
+      max-width: 480px;
+      position: relative;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 14px 20px 14px 44px;
+      background: rgba(30, 41, 59, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      color: #fff;
+      font-size: 15px;
+      font-family: inherit;
+      outline: none;
+      backdrop-filter: blur(10px);
+      transition: all 0.3s;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.25);
+      background: rgba(30, 41, 59, 0.85);
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #64748b;
+      width: 18px;
+      height: 18px;
+    }
+
+    .filter-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .filter-btn {
+      padding: 8px 18px;
+      background: rgba(30, 41, 59, 0.5);
+      border: 1px solid var(--card-border);
+      border-radius: 999px;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      font-family: inherit;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .filter-btn:hover {
+      color: #fff;
+      border-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .filter-btn.active {
+      background: var(--gradient-brand);
+      color: #fff;
+      border-color: transparent;
+      box-shadow: 0 4px 16px rgba(99, 102, 241, 0.4);
+    }
+
+    /* Grid of Certificates */
+    .cert-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 24px;
+    }
+
+    .cert-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 20px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gradient-brand);
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .cert-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: var(--card-hover-border);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px var(--primary-glow);
+    }
+
+    .cert-card:hover::before {
+      opacity: 1;
+    }
+
+    /* Animated Icon Showcase Container */
+    .anim-container {
+      width: 76px;
+      height: 76px;
+      border-radius: 20px;
+      background: radial-gradient(circle at center, rgba(30, 41, 59, 0.9), rgba(15, 23, 42, 0.9));
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      position: relative;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease;
+    }
+
+    .cert-card:hover .anim-container {
+      transform: scale(1.1) rotate(4deg);
+      border-color: rgba(99, 102, 241, 0.5);
+    }
+
+    .anim-container img {
+      width: 50px;
+      height: 50px;
+      display: block;
+    }
+
+    .category-tag {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .cert-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #f1f5f9;
+    }
+
+    .cert-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .card-actions {
+      display: flex;
+      gap: 10px;
+      width: 100%;
+    }
+
+    .btn {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background: var(--gradient-brand);
+      color: #fff;
+      border: none;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+    }
+
+    .btn-primary:hover {
+      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.5);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.05);
+      color: #e2e8f0;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Modal for preview */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(10px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 100;
+      padding: 24px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .modal-overlay.active {
+      display: flex;
+      opacity: 1;
+    }
+
+    .modal-container {
+      width: 100%;
+      max-width: 960px;
+      height: 85vh;
+      background: #111827;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      transform: scale(0.95);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .modal-overlay.active .modal-container {
+      transform: scale(1);
+    }
+
+    .modal-header {
+      padding: 18px 24px;
+      background: rgba(30, 41, 59, 0.7);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      font-size: 24px;
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      border-radius: 6px;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+
+    .modal-body {
+      flex: 1;
+      width: 100%;
+      height: 100%;
+      background: #0f172a;
+    }
+
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="ambient-glow glow-1"></div>
+  <div class="ambient-glow glow-2"></div>
+  <div class="ambient-glow glow-3"></div>
+
+  <div class="container">
+    <header class="hero">
+      <div class="badge-pill">Verified Credentials Portfolio</div>
+      <h1>Aahel Gupta's <span>Certifications</span></h1>
+      <p>Explore all 18 technical &amp; professional certifications with interactive animations, real-time filtering, and direct PDF viewing.</p>
+
+      <div class="controls">
+        <div class="search-box">
+          <svg class="search-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+          <input type="text" id="searchInput" placeholder="Search certificates (e.g., Python, React, Internship)...">
+        </div>
+
+        <div class="filter-pills">
+          <button class="filter-btn active" data-filter="all">All (18)</button>
+          <button class="filter-btn" data-filter="professional">Professional (2)</button>
+          <button class="filter-btn" data-filter="frontend">Frontend &amp; Web (6)</button>
+          <button class="filter-btn" data-filter="backend">Backend &amp; Systems (8)</button>
+          <button class="filter-btn" data-filter="tools">Databases &amp; Tools (2)</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="cert-grid" id="certGrid">
+      <!-- Certificate Cards injected by JS -->
+    </main>
+  </div>
+
+  <!-- Preview Modal -->
+  <div class="modal-overlay" id="previewModal">
+    <div class="modal-container">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle">
+          <span>Certificate Preview</span>
+        </div>
+        <button class="close-btn" id="closeModal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <iframe id="pdfFrame" src="" title="Certificate Preview"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const certificates = [
+      {
+        id: "internship",
+        title: "Internship Certificate",
+        category: "professional",
+        categoryLabel: "Professional",
+        desc: "Certified industry experience and successful completion of professional internship responsibilities.",
+        anim: "./assets/animations/internship.svg",
+        file: "./Internship Certificate.pdf"
+      },
+      {
+        id: "training",
+        title: "Training Certificate",
+        category: "professional",
+        categoryLabel: "Professional",
+        desc: "Formal comprehensive technical training program completion and domain competency certification.",
+        anim: "./assets/animations/training.svg",
+        file: "./Training Certificate.pdf"
+      },
+      {
+        id: "html",
+        title: "HTML Certificate",
+        category: "frontend",
+        categoryLabel: "Frontend",
+        desc: "Semantic HTML5 architecture, DOM hierarchy, accessible web structures, and SEO compliance.",
+        anim: "./assets/animations/html.svg",
+        file: "./Certificate HTML.pdf"
+      },
+      {
+        id: "css",
+        title: "CSS Certificate",
+        category: "frontend",
+        categoryLabel: "Frontend",
+        desc: "Responsive web layouts, Flexbox, CSS Grid, media queries, keyframe animations, and styling.",
+        anim: "./assets/animations/css.svg",
+        file: "./Certificate CSS.pdf"
+      },
+      {
+        id: "javascript",
+        title: "JavaScript Certificate",
+        category: "frontend",
+        categoryLabel: "Frontend",
+        desc: "ES6+ core language, asynchronous programming, promises, DOM manipulation, and browser APIs.",
+        anim: "./assets/animations/javascript.svg",
+        file: "./Certificate JavaScript.pdf"
+      },
+      {
+        id: "react",
+        title: "React Certificate",
+        category: "frontend",
+        categoryLabel: "Frontend",
+        desc: "Component architecture, React Hooks, virtual DOM reconciliation, state management, and SPA workflows.",
+        anim: "./assets/animations/react.svg",
+        file: "./Certificate React.pdf"
+      },
+      {
+        id: "angular",
+        title: "Angular Certificate",
+        category: "frontend",
+        categoryLabel: "Frontend",
+        desc: "TypeScript framework, dependency injection, RxJS reactive patterns, modular routing, and components.",
+        anim: "./assets/animations/angular.svg",
+        file: "./Certificate Angular.pdf"
+      },
+      {
+        id: "wordpress",
+        title: "WordPress Certificate",
+        category: "frontend",
+        categoryLabel: "Frontend",
+        desc: "CMS architecture, theme customization, plugin integration, content schemas, and publishing.",
+        anim: "./assets/animations/wordpress.svg",
+        file: "./Certificate WordPress.pdf"
+      },
+      {
+        id: "python",
+        title: "Python Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: "Core syntax, OOP concepts, data structures, algorithms, modular scripting, and standard libraries.",
+        anim: "./assets/animations/python.svg",
+        file: "./Certificate Python.pdf"
+      },
+      {
+        id: "django",
+        title: "Django Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: "Python web framework, MVT architecture, ORM querysets, authentication, and RESTful APIs.",
+        anim: "./assets/animations/django.svg",
+        file: "./Certificate Django.pdf"
+      },
+      {
+        id: "node",
+        title: "Node.js Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: "V8 JavaScript runtime, event-driven I/O, Express routing, middleware pipelines, and API services.",
+        anim: "./assets/animations/node.svg",
+        file: "./Certificate Node.pdf"
+      },
+      {
+        id: "csharp",
+        title: "C# Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: "Object-oriented paradigms, LINQ expressions, generics, asynchronous tasks, and memory management.",
+        anim: "./assets/animations/csharp.svg",
+        file: "./Certificate C#.pdf"
+      },
+      {
+        id: ".net",
+        title: ".NET Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: ".NET runtime environment, Web APIs, dependency injection, CLI tooling, and cross-platform architecture.",
+        anim: "./assets/animations/dotnet.svg",
+        file: "./Certificate .NET.pdf"
+      },
+      {
+        id: "php",
+        title: "PHP Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: "Server-side scripting, sessions, database connectivity, request lifecycles, and backend integrations.",
+        anim: "./assets/animations/php.svg",
+        file: "./Certificate PHP.pdf"
+      },
+      {
+        id: "ruby",
+        title: "Ruby Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: "Pure object-oriented programming, blocks, procs, lambdas, metaprogramming, and Ruby gems.",
+        anim: "./assets/animations/ruby.svg",
+        file: "./Certificate Ruby.pdf"
+      },
+      {
+        id: "rails",
+        title: "Ruby On Rails Certificate",
+        category: "backend",
+        categoryLabel: "Backend",
+        desc: "Convention over configuration, ActiveRecord ORM, migrations, MVC routing, and rapid app prototyping.",
+        anim: "./assets/animations/rails.svg",
+        file: "./Certificate Ruby On Rails.pdf"
+      },
+      {
+        id: "sql",
+        title: "SQL Certificate",
+        category: "tools",
+        categoryLabel: "Database",
+        desc: "Relational database querying, multi-table JOINs, aggregations, indexing strategies, and schema design.",
+        anim: "./assets/animations/sql.svg",
+        file: "./Certificate SQL.pdf"
+      },
+      {
+        id: "git",
+        title: "Git Certificate",
+        category: "tools",
+        categoryLabel: "Tools",
+        desc: "Distributed version control, branching strategies, merge conflict resolution, rebasing, and GitHub collaboration.",
+        anim: "./assets/animations/git.svg",
+        file: "./Certificate Git.pdf"
+      }
+    ];
+
+    const certGrid = document.getElementById('certGrid');
+    const searchInput = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const previewModal = document.getElementById('previewModal');
+    const pdfFrame = document.getElementById('pdfFrame');
+    const modalTitle = document.getElementById('modalTitle');
+    const closeModal = document.getElementById('closeModal');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function renderCertificates() {
+      certGrid.innerHTML = '';
+      const filtered = certificates.filter(c => {
+        const matchesCategory = currentFilter === 'all' || c.category === currentFilter;
+        const matchesSearch = c.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                              c.desc.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                              c.categoryLabel.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchesCategory && matchesSearch;
+      });
+
+      if (filtered.length === 0) {
+        certGrid.innerHTML = `<div style="grid-column: 1 / -1; text-align: center; padding: 60px; color: #64748b;">No certificates found matching your search.</div>`;
+        return;
+      }
+
+      filtered.forEach(c => {
+        const card = document.createElement('div');
+        card.className = 'cert-card';
+        card.innerHTML = `
+          <div class="anim-container">
+            <img src="${c.anim}" alt="${c.title} Animation" />
+          </div>
+          <span class="category-tag">${c.categoryLabel}</span>
+          <h3 class="cert-title">${c.title}</h3>
+          <p class="cert-desc">${c.desc}</p>
+          <div class="card-actions">
+            <button class="btn btn-primary" onclick="openPreview('${encodeURIComponent(c.file)}', '${c.title}')">
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+              </svg>
+              Preview
+            </button>
+            <a class="btn btn-secondary" href="${c.file}" download>
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              </svg>
+              PDF
+            </a>
+          </div>
+        `;
+        certGrid.appendChild(card);
+      });
+    }
+
+    function openPreview(fileUrl, title) {
+      pdfFrame.src = decodeURIComponent(fileUrl);
+      modalTitle.innerHTML = `<span>${title}</span>`;
+      previewModal.classList.add('active');
+    }
+
+    closeModal.addEventListener('click', () => {
+      previewModal.classList.remove('active');
+      pdfFrame.src = '';
+    });
+
+    previewModal.addEventListener('click', (e) => {
+      if (e.target === previewModal) {
+        previewModal.classList.remove('active');
+        pdfFrame.src = '';
+      }
+    });
+
+    searchInput.addEventListener('input', (e) => {
+      searchQuery = e.target.value.trim();
+      renderCertificates();
+    });
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        renderCertificates();
+      });
+    });
+
+    renderCertificates();
+  </script>
+</body>
+</html>
